@@ -1,0 +1,12 @@
+{% extends "::layout.html.twig" %}
+
+{% block javascripts %}
+    {% javascripts '@POCPocBundle/Resources/public/js/*' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+{% block css %}
+    {% stylesheets '@POCPocBundle/Resources/public/css/*' %}
+        <link rel="stylesheet" href="{{ asset_url }}"></link>
+    {% endstylesheets  %}
+{% endblock %}

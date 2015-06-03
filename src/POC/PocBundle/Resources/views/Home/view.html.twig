@@ -1,0 +1,33 @@
+{% extends "POCPocBundle::layout.html.twig" %}
+
+{% block body %}
+    <div id="pageMenuView">
+        <a href="{{ path('poc_poc_homepage') }}">
+            <button type="button" class="btn btn-primary btn-lg">
+                Liste des annonces
+            </button>
+        </a>
+        <a href="{{ path('addArticle') }}">
+            <button type="button" class="btn btn-primary btn-lg">
+                Ajouter une annonce
+            </button>
+        </a>
+    </div>
+    <div id="panelArticle" class="panel panel-primary">
+        <div class="panel-heading">
+            <h3>Article</h3>
+        </div>
+        <ul id="listArticle" class="list-group">
+            <li class="list-group-item">
+                <div id="articleInfos">
+                    <div><b>{{ article.title }}</b></div>
+                    <div>{{ article.categorie }}</div>
+                    <div>{{ article.prix }} €</div>
+                    <div><b>Description :</b> {{ article.description }}</div>
+                </div>
+                <img src="{{ asset(article.cheminImage) }}" height="150" width="200">
+                <button class="btn btn-primary addCart" type="submit">Ajouter au panier</button>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

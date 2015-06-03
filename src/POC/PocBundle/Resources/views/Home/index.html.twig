@@ -1,0 +1,31 @@
+{% extends "POCPocBundle::layout.html.twig" %}
+
+{% block body %}
+    <div id="pageMenu">
+        <a href="{{ path('addArticle') }}">
+            <button type="button" class="btn btn-primary btn-lg">
+                Ajouter une annonce
+            </button>
+        </a>
+    </div>
+    <div id="searchArticleInput" class="input-group">
+        <input type="text" id="searchText" class="form-control" placeholder="Rechercher un titre...">
+        <select id="searchCategorie" class="form-control">
+            <option value="categorie">Catégorie...</option>
+            <option value="voiture">Voiture</option>
+            <option value="informatique">Informatique</option>
+            <option value="ameublement">Ameublement</option>
+        </select>
+        <span class="input-group-btn">
+            <button class="btn btn-primary" type="button" onclick="searchArticle('{{ asset('images/load.gif') }}');">Chercher</button>
+        </span>
+    </div>
+    <div id="panelArticle" class="panel panel-primary">
+        <div class="panel-heading">
+            <h3>Articles</h3>
+        </div>
+        <ul id="listArticle" class="list-group">
+            {{ include('POCPocBundle:Home:searchResult.html.twig', {'listArticle': listArticle}) }}
+        </ul>
+    </div>
+{% endblock %}

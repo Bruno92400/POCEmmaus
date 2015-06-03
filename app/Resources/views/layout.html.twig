@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+        {% stylesheets '../app/Resources/public/css/*' %}
+            <link rel="stylesheet" href="{{ asset_url }}"></link>
+        {% endstylesheets %}
+        {% block css %}{% endblock %}
+    <title>Emmaüs</title>
+  </head>
+  <body>
+    <h1><img src="{{ asset('images/emmaus.png') }}" height="120" width="150">Emmaus E-Commerce</h1>
+    {% if app.session.get('user') is defined %}
+        {% set user = app.session.get('user') %}
+        <h2>Bienvenue {{user}}
+          {% if user != '' %}
+            <a href="{{ path('connexion') }}">
+                <button type="button" class="btn btn-primary btn-lg">
+                    Deconnexion
+                </button>
+            </a>
+          {% endif %}
+        </h2>
+    {% endif %}
+
+    {% block body %}
+    {% endblock %}
+
+  </body>
+
+  {% javascripts '../app/Resources/public/js/*' %}
+      <script type="text/javascript" src="{{ asset_url }}"></script>
+  {% endjavascripts %}
+  {% block javascripts %}{% endblock %}
+
+</html>

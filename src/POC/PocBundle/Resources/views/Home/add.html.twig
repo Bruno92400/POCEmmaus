@@ -1,0 +1,12 @@
+{% extends "POCPocBundle::layout.html.twig" %}
+
+{% block body %}
+    <div id="pageMenu">
+        <a href="{{ path('poc_poc_homepage') }}">
+            <button type="button" class="btn btn-primary btn-lg">
+                Liste des annonces
+            </button>
+        </a>
+    </div>
+    {{ form(form) }}
+{% endblock %}

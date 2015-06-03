@@ -1,0 +1,17 @@
+{% if listArticle|length > 0 %}
+    {% for article in listArticle %}
+        <li class="list-group-item">
+            <div id="articleInfos">
+                <a href="{{ path('viewArticle', {'id': article.id}) }}"><div><b>{{ article.title }}</b></div></a>
+                <div>{{ article.categorie }}</div>
+                <div>{{ article.prix }} €</div>
+            </div>
+            <img src="{{ asset(article.cheminImage) }}" height="150" width="200">
+            <button class="btn btn-primary addCart" type="submit">Ajouter au panier</button>
+        </li>
+    {% endfor %}
+{% else %}
+    <li class="list-group-item">
+        Aucun résultat
+    </li>
+{% endif %}

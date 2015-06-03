@@ -1,0 +1,19 @@
+connexion:
+    path:     /connexion
+    defaults: { _controller: POCPocBundle:Home:connexion }
+
+poc_poc_homepage:
+    path:     /home
+    defaults: { _controller: POCPocBundle:Home:index }
+
+searchArticles:
+    path:     /home/{searchTitle}/{categorie}
+    defaults: { _controller: POCPocBundle:Home:searchResult }
+
+viewArticle:
+    path:     /view/{id}
+    defaults: { _controller: POCPocBundle:Home:view }
+
+addArticle:
+    path:     /add
+    defaults: { _controller: POCPocBundle:Home:add }

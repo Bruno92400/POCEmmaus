@@ -1,0 +1,3 @@
+poc_poc:
+    resource: "@POCPocBundle/Resources/config/routing.yml"
+    prefix:   /
