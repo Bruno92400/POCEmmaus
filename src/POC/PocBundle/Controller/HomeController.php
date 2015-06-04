@@ -179,4 +179,21 @@ class HomeController extends Controller
             'form' => $form->createView()
         ));
     }
+
+    public function deleteAction(Request $request, $id){
+        $session = $request->getSession();
+        $listArticle = $session->get('listArticle');
+
+        foreach ($listArticle as $key => $article) {
+            if($article['id'] == $id){
+                unset($listArticle[$key]);
+            }
+        }
+
+        $session->set('listArticle', $listArticle);
+
+        return $this->render('POCPocBundle:Home:index.html.twig', array(
+          'listArticle' => $session->get('listArticle')
+        ));
+    }
 }

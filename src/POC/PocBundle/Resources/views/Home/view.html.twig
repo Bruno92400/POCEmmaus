@@ -27,6 +27,11 @@
                 </div>
                 <img src="{{ asset(article.cheminImage) }}" height="150" width="200">
                 <button class="btn btn-primary addCart" type="submit">Ajouter au panier</button>
+                <a href="{{ path('deleteArticle', {'id': article.id}) }}">
+                    <button type="button" class="btn btn-primary btn-lg">
+                        Supprimer l'annonce
+                    </button>
+                </a>
             </li>
         </ul>
     </div>

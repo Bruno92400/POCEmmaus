@@ -17,3 +17,7 @@ viewArticle:
 addArticle:
     path:     /add
     defaults: { _controller: POCPocBundle:Home:add }
+
+deleteArticle:
+    path:     /delete/{id}
+    defaults: { _controller: POCPocBundle:Home:delete }
